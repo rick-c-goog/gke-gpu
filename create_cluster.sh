@@ -1,0 +1,1 @@
+gcloud container clusters create pytorch-training-cluster     --num-nodes=2     --zone=us-west1-b     --accelerator="type=nvidia-tesla-t4,count=2,gpu-driver-version=default"  --machine-type="n1-highmem-2"     --scopes="gke-default,storage-rw"
