@@ -8,6 +8,11 @@ gcloud container clusters create pytorch-training-cluster  \ --num-nodes=2     -
 
 ```
 
+optionally, the GPU drivers can installed manually after GKE cluster or nodepool provisioned:
+```
+kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/master/nvidia-driver-installer/cos/daemonset-preloaded.yaml
+```
+
 ## 2. Check the NVIDIA device driver and CUDA version installed
 ```
  cat << EOF | kubectl create -f -
