@@ -52,3 +52,14 @@ spec:
           nvidia.com/gpu: 1
 EOF
 ```
+
+## 4. If the Pod runtime can not load the CUDA libraries, CUDA applications running in Pods consuming NVIDIA GPUs need to dynamically discover CUDA libraries. This requires including /usr/local/nvidia/lib64 in the LD_LIBRARY_PATH environment variable. 
+e.g.:
+```
+containers:
+  - name: cuda-vector-add
+    image: gcr.io/spectro-images-public/gpu/nvidia/ubuntu-nvidia-add:ubuntu
+    env:
+    - name: LD_LIBRARY_PATH
+      value: "/usr/local/nvidia/lib64"
+```
