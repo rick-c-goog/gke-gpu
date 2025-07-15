@@ -24,7 +24,7 @@ spec:
   restartPolicy: OnFailure
   containers:
   - name: nvidia-version-check
-    image: "nvidia/cuda:11.0.3-base-ubuntu20.04"
+    image: "nvidia/cuda:12.4.0-base-ubuntu22.04"
     command: ["nvidia-smi"]
     resources:
       limits:
